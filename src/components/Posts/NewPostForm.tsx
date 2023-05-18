@@ -81,7 +81,7 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
     const { communityId } = router.query;
     // check new post object
     const newPost: Post = {
-      // id: communityId,
+      // id: string,
       communityId: communityId as string,
       creatorId: user?.uid,
       creatorDisplayName: user.email!.split('@')[0],

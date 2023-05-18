@@ -19,9 +19,6 @@ type CommunityPageProps = {
 
 const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
   const setCommunityStateValue = useSetRecoilState(communityState);
-  if (!communityData) {
-    return <NotFound />;
-  }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
@@ -32,6 +29,9 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [communityData]);
 
+  if (!communityData) {
+    return <NotFound />;
+  }
   return (
     <>
       <Header communityData={communityData} />
