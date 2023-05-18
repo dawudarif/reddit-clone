@@ -74,6 +74,7 @@ const CreatePostLink: React.FC = () => {
   );
 };
 export default CreatePostLink;
+
 function setAuthModalState(arg0: { open: string; view: string }) {
   throw new Error('Function not implemented.');
 }

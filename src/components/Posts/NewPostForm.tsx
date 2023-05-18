@@ -81,7 +81,7 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
     const { communityId } = router.query;
     // check new post object
     const newPost: Post = {
-      id: user?.uid as string,
+      // id: user?.uid as string,
       communityId: communityId as string,
       creatorId: user?.uid,
       creatorDisplayName: user.email!.split('@')[0],
@@ -111,14 +111,14 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
           imageURL: downloadURL,
         });
       }
+
+      // redirect the user back to communityPage using the router
+      router.back();
     } catch (error: any) {
       console.log('handleCreatePost error', error.message);
       setError(true);
     }
     setLoading(false);
-
-    // redirect the user back to communityPage using the router
-    router.back();
   };
 
   const onTextChange = (
