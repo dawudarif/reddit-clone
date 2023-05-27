@@ -65,7 +65,7 @@ const usePosts = () => {
         const postVoteRef = doc(
           collection(firestore, 'users', `${user?.uid}/postVotes`)
         );
-
+        // console.log(postVoteRef);
         const newVote: PostVote = {
           id: postVoteRef.id,
           postId: post.id!,
@@ -114,6 +114,7 @@ const usePosts = () => {
             voteValue: vote,
           });
           voteChange = 2 * vote;
+
           // updating the value of post.voteStatus
         }
       }

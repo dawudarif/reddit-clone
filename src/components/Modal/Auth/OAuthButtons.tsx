@@ -16,7 +16,7 @@ const OAuthButtons: React.FC = () => {
     const userDocRef = doc(firestore, 'users', user.uid);
     await setDoc(userDocRef, JSON.parse(JSON.stringify(user)));
   };
-
+  // console.log(userCredFacebook, userCredGoogle);
   useEffect(() => {
     if (userCredGoogle) {
       createUserDocument(userCredGoogle.user);
@@ -24,7 +24,7 @@ const OAuthButtons: React.FC = () => {
     if (userCredFacebook) {
       createUserDocument(userCredFacebook.user);
     }
-  });
+  }, [userCredFacebook, userCredGoogle]);
 
   return (
     <Flex direction='column' width='100%' mb={4}>

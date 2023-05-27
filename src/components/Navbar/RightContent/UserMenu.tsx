@@ -34,6 +34,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
     await signOut(auth);
   };
 
+  // console.log(user?.email?.split('@')[0]);
+  // console.log(user?.email?.split('@')[1]);
+
   return (
     <Menu>
       <MenuButton

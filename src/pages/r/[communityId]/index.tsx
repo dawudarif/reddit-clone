@@ -49,6 +49,7 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
 };
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+  // console.log(context.query);
   // get community data and pass to client
   try {
     const communityDocRef = doc(

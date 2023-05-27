@@ -34,6 +34,7 @@ export default function Home() {
     onVote,
   } = usePosts();
   const { communityStateValue } = useCommunityData();
+  console.log(communityStateValue);
 
   const buildUserHomeFeed = async () => {
     setLoading(true);
